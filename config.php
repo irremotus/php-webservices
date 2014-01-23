@@ -1,5 +1,5 @@
 <?php
-	define("BASE_PATH", '/php-webservices/services'); /* the web accessible path to this folder */
+	define("BASE_PATH", '/php-webservices'); /* the web accessible path to this folder */
 
 	session_start();
 
