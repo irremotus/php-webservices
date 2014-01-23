@@ -1,9 +1,29 @@
 <?php
-class Response {
-	public function send($status, $data) {
-		$response = array("status" => $status, "data" => $data);
-		echo json_encode($response);
-		return true;
+	class Response {
+		private $status;
+		private $data;
+
+		public function __construct($status = false, $data = array())
+		{
+			$this->setStatus($status);
+			$this->setData($data);
+		}
+
+		public function setStatus($status)
+		{
+			$this->status = $status;
+		}
+
+		public function setData($data)
+		{
+			$this->data = $data;
+		}
+
+		public function send()
+		{
+			$response = array("status" => $this->status, "data" => $this->data);
+			echo json_encode($response);
+			return true;
+		}
 	}
-}
 ?>
