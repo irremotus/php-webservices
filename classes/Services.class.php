@@ -5,8 +5,8 @@
 			if (isset($_GET['service']) && isset($_GET['action'])) {
 				$service_name = $_GET['service'];
 				$method_name = $_GET['action'];
-				if (file_exists($_SERVER['DOCUMENT_ROOT'].BASE_PATH.'/public-classes/'.$service_name.'.class.php')) {
-					require_once $_SERVER['DOCUMENT_ROOT'].BASE_PATH.'/public-classes/'.$service_name.'.class.php';
+				global $PUBLIC_CLASS_PATH;
+				if (file_exists($PUBLIC_CLASS_PATH.$service_name.'.class.php')) {
 					if (class_exists($service_name)) {
 						$service = new $service_name();
 						if (method_exists($service, $method_name))
