@@ -1,7 +1,7 @@
 <?php
 	define("WEB_BASE_PATH", '/php-webservices'); /* the web accessible path to this folder */
 	$PHP_BASE_PATH = dirname(__DIR__.'/../');
-	$SYSTEM_CLASS_PATH = $PHP_BASE_PATH.'/classes/';
+	$SYSTEM_CLASS_PATH = $PHP_BASE_PATH.'/system_classes/';
 	$PUBLIC_CLASS_PATH = $PHP_BASE_PATH.'/public_classes/';
 	$PRIVATE_CLASS_PATH = $PHP_BASE_PATH.'/private_classes/';
 
