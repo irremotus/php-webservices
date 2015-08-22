@@ -1,8 +1,19 @@
 <?php
 	$PHP_BASE_PATH = dirname(__DIR__.'/../');
+	$user_conf = NULL;
+	if (file_exists('config.ini')) {
+		$user_conf = parse_ini_file('config.ini');
+	}
+	if ($user_conf
+			&& isset($user_conf['public_class_path'])
+			&& isset($user_conf['private_class_path'])) {
+		$PUBLIC_CLASS_PATH = $PHP_BASE_PATH.'/'.$user_conf['public_class_path'].'/';
+		$PRIVATE_CLASS_PATH = $PHP_BASE_PATH.'/'.$user_conf['private_class_path'].'/';
+	} else {
+		$PUBLIC_CLASS_PATH = $PHP_BASE_PATH.'/../public_classes/';
+		$PRIVATE_CLASS_PATH = $PHP_BASE_PATH.'/../private_classes/';
+	}
 	$SYSTEM_CLASS_PATH = $PHP_BASE_PATH.'/system_classes/';
-	$PUBLIC_CLASS_PATH = $PHP_BASE_PATH.'/public_classes/';
-	$PRIVATE_CLASS_PATH = $PHP_BASE_PATH.'/private_classes/';
 
 	session_start();
 
